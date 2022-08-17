@@ -9,6 +9,32 @@
                       <div lc_id="jayChQGWVD" div-lc-mark lc-mark></div>
                   </td>
               </tr>
+              <tr lc_id="ZkGHGI7m4A">
+                  <td lc_id="y39F0MMZXF">
+                      <div class="title" lc_id="aTozeXy5X1">模块儿：</div>
+                  </td>
+                  <td lc_id="py61TxZ6JM">
+                      <div class="la-card" lc-mark lc_id="CEQYvPg0Lq">
+                          <div class="la-card__header" lc_id="n1tZOilCKM">
+                              <div class="la-card__iconTitle" lc_id="yL8DJBlHHX">
+                                  <span class="icon" lc_id="c/Gh20Ca09"></span>
+                                  <div class="title" lc_id="gS9UirllZM">
+                                      <span lc_id="h8Qa0nn9EA">这是一个文本</span>
+                                  </div>
+                              </div>
+                              <div class="la-card__more" lc_id="xMokxqDV1u">
+                                  <slot name="more" lc_id="UbbDrd/kty"></slot>
+                              </div>
+                          </div>
+                          <div class="la-card__wrap" lc_id="y6gOFVHmkR">
+                              <div class="la-card__body" lc_id="dTKAV5AXBl">
+                                  <slot name="body" lc_id="ROR2fYFLZB"></slot>
+                              </div>
+                              <div class="la-card__border--bottom" lc_id="2TEzNt4Fjv"></div>
+                          </div>
+                      </div>
+                  </td>
+              </tr>
               <tr lc_id="i+v/R6TP05">
                   <td lc_id="wLL4oua+v6">
                       <div class="title" lc_id="ySJLvpCtUj">span:</div>
@@ -40,9 +66,8 @@
                   <td lc_id="ylNI9kdThf">
                       <article lc_id="p6pMF5D2hP">
                           <h1 lc-mark lc_id="GcMEfj/r8i">Internet Explorer 9</h1>
-                          <p lc-mark lc_id="odzwtRzLYd">Windows Internet Explorer 9（简称 IE9）于 2011 年 3 月
-              14
-              日发布.....</p>
+                          <p lc-mark lc_id="odzwtRzLYd">Windows Internet Explorer 9（简称 IE9）于 2011 年 3 月 14
+                            日发布.....</p>
                       </article>
                   </td>
               </tr>
@@ -70,30 +95,53 @@
   <script>
 import { deepLCEle } from "@/utils/initRawComponent";
 export default {
-  data() {
-    return {};
-  },
+    data() {
+        return {};
+    },
 
-  mounted() {
-    this.$emit('mounted');
-    // 对所有拥有lc-mark的元素进行初始化
-    let countComponentCount = 0;
-    deepLCEle(document.querySelector('.demonstration-raw'), () => {
-      countComponentCount++;
-    });
-  },
-  methods: {},
+    mounted() {
+        this.$emit("mounted");
+        // 对所有拥有lc-mark的元素进行初始化
+        let countComponentCount = 0;
+        deepLCEle(document.querySelector(".demonstration-raw"), () => {
+            countComponentCount++;
+        });
+    },
+    methods: {},
 };  </script>
   <style scoped>.title {
-  width: 120px;
-}
-
-.demonstration-raw {
-  padding: 10px 0;
-}
-
-[div-lc-mark] {
-  border: 1px grey dashed;
-  min-height: 1rem;
-  border-radius: 5px;
-}</style>
+      width: 120px;
+  }
+  
+  .demonstration-raw {
+      padding: 10px 0;
+  }
+  
+  [div-lc-mark] {
+      border: 1px grey dashed;
+      min-height: 1rem;
+      border-radius: 0px;
+  }
+  
+  .la-card {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      padding: 15px;
+      position: relative;
+      background: rgba(11, 22, 38, 0.7);
+      border: 1px solid #000;
+      border-radius: 13px;
+  }
+  
+  .la-card .title {
+  
+      height: 34px;
+      font-size: 18px;
+      color: #fff;
+      font-style: italic;
+      line-height: 34px;
+      flex-shrink: 0;
+      padding-left: 2px;
+  
+  }</style>

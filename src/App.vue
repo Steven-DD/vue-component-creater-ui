@@ -1,5 +1,5 @@
 <template>
-  <!-- <vccs></vccs> -->
+  <vccs></vccs>
   <div class="app">
     <div>顶部编辑</div>
     <div>左侧编辑</div>

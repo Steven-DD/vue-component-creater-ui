@@ -37,8 +37,8 @@
       <el-tooltip effect="dark" content="查看实时代码" placement="top-start">
         <img class="round-icon" :src="iconCode" alt="" @click="codeDialogVisible = true">
       </el-tooltip>
-      <el-popconfirm confirmButtonText="确认" cancelButtonText="点错了" iconColor="red"
-        title="点我将清空所有编辑的内容, 确认吗?" @confirm="clear">
+      <el-popconfirm confirmButtonText="确认" cancelButtonText="点错了" iconColor="red" title="点我将清空所有编辑的内容, 确认吗?"
+        @confirm="clear">
         <template #reference>
           <img class="round-icon" :src="iconClear" alt="">
         </template>
@@ -410,6 +410,7 @@ export default {
   position: fixed;
   right: 0;
   top: 0;
+
   .x {
     width: 20px;
     height: 2px;
@@ -421,6 +422,7 @@ export default {
     right: 0;
     pointer-events: none;
   }
+
   .y {
     width: 2px;
     height: 20px;
@@ -445,9 +447,58 @@ export default {
 }
 
 #mountedEle {
-  border: 1px dashed rgb(126, 126, 128);
+  border: 2px dashed rgb(126, 126, 128);
   border-radius: 10px;
   margin: 20px;
+
+  .container {
+    border: 2px dashed rgb(126, 126, 128);
+  }
+
+  .la-card {
+    // @include background('laCard/cardbg.png');
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 15px;
+    position: relative;
+    background: rgba(11, 22, 38, 0.7);
+    border: 1px solid #4dba87;
+    border-radius: 13px;
+
+    &__header {
+      // @include background('laCard/titleBg.png', $bgSize: 100%);
+      background-position-y: bottom;
+      display: flex;
+      align-content: center;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &__iconTitle {
+      display: flex;
+      align-items: baseline;
+
+      .icon {
+        // @include icon('laCard/cardIcon.png');
+      }
+
+      .title {
+        height: 34px;
+        font-size: 18px;
+        color: #fff;
+        font-style: italic;
+        line-height: 34px;
+        flex-shrink: 0;
+        padding-left: 2px;
+      }
+    }
+
+    &__more {
+      font-size: 18px;
+      color: #4dba87;
+    }
+  }
 }
 </style>
 
@@ -462,8 +513,7 @@ export default {
     border-radius: 5px;
   }
 
-  [lc_id] {
-  }
+  [lc_id] {}
 
   &::after {
     content: "编辑区域";
