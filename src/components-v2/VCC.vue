@@ -22,11 +22,11 @@
     </div>
 
     <div class="copy">
-      <div>
+      <!-- <div>
         <el-alert title="遇到问题？" type="info">
           <el-link :underline="false" @click="help" style="font-size: 12px; margin-top: 5px;">点击我查看帮助文档</el-link>
         </el-alert>
-      </div>
+      </div> -->
 
       <el-tooltip effect="dark" content="二次编辑" placement="top-start">
         <div class="round-icon icon-vue" alt="" @click="vueDialogVisible = true">Vue</div>

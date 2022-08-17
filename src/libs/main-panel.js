@@ -36,6 +36,7 @@ export class MainPanelProvider {
      * @param {*} rawDataStructure 
      */
     _render(rawDataStructure) {
+        console.log(rawDataStructure);
         this._rawDataStructure = rawDataStructure;
         // 对外只提供副本，防止外面污染内部
         const codeStructureCopy = cloneDeep(rawDataStructure);
