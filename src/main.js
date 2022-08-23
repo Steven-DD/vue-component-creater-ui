@@ -10,8 +10,14 @@ import {
 } from "@element-plus/icons-vue";
 import "element-plus/dist/index.css";
 
+import './assets/js/common.js';
+import './assets/js/rem.js';
+
 import APP from "./App.vue";
 import loadCompontents from "@/libs/UIComponentInit.js";
+
+import LaCardVue from '@/components-base/LaCard.vue'
+import Table from '@/components-base/table.vue'
 
 /**
  * 创建实例基础方法
@@ -22,6 +28,8 @@ import loadCompontents from "@/libs/UIComponentInit.js";
 function loadTemplate(renderComponent, loadFinished = () => {}) {
   const app = createApp(renderComponent);
   app.use(ElementPlus);
+  app.component('la-card', LaCardVue)
+  app.component('la-table', Table)
   loadCompontents().then((modules) => {
     for (let index = 0; index < modules.length; index++) {
       const module = modules[index];
@@ -62,6 +70,9 @@ app.component("l-refresh", Refresh);
 app.component("l-delete", Delete);
 app.component("document-copy", DocumentCopy);
 app.component("l-minus", Minus);
+
+// app.component('lc-card', LaCardVue)
+
 
 app.mount("#app");
 

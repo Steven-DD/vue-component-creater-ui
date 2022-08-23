@@ -1,0 +1,342 @@
+// 针对 UI 设计稿而做的一些样式重置
+// 也既是 那些 浏览器中有 默认的样式，但需重做
+
+textarea,
+input,
+button,
+select,
+keygen,
+legend,
+canvas,
+body,
+html {
+  font: $fs16/1.2 Helvetica Neue, Helvetica, Arial, Microsoft Yahei, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei,
+    sans-serif;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  user-select: none;
+  color: #ffffff;
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background: transparent;
+}
+
+// 多选框样式 兼容性 IE9+
+input[type='checkbox'],
+input[type='radio'] {
+  display: none;
+}
+
+i.checkbox {
+  font-size: 20px;
+}
+
+// 未选中的checkbox的样式
+i.checkbox:before,
+i.radio:before {
+  content: '\e608';
+  color: #00fffe;
+}
+
+// 选中的checkbox样式
+input[type='checkbox']:checked + i.checkbox:before,
+input[type='radio']:checked + i.radio:before {
+  content: '\e607';
+  color: #00fffe;
+}
+
+// 解决左右出现滚动条时 左右晃动问题
+html {
+  overflow: hidden;
+}
+
+// placeholder 样式
+input::-webkit-input-placeholder {
+  /* WebKit browsers */
+  color: #b8d7ff !important;
+}
+
+input:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: #b8d7ff !important;
+}
+
+input::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #b8d7ff !important;
+}
+
+input:-ms-input-placeholder {
+  /* Internet Explorer 10+ */
+  color: #b8d7ff !important;
+}
+
+// 滚动条
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+// 定义滚动条轨道
+::-webkit-scrollbar-track {
+  border-radius: 5px;
+  background: #385b89;
+}
+
+// 定义滑块
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background: #1e5fe7;
+}
+
+//整体
+.main-page {
+  width: 100%;
+  height: 100%;
+  font-size: $fs16;
+}
+
+// 左侧
+.content-left {
+  width: px2rem(400);
+  height: 84%;
+  position: fixed;
+  left: px2rem(20);
+  top: 7%;
+  z-index: 2;
+  overflow: hidden;
+
+  &.show_hidden {
+    height: 6.1%;
+    animation: showHidden 2s linear;
+    -webkit-animation: showHidden 2s linear;
+    /* Safari 与 Chrome */
+  }
+
+  &.hidden_show {
+    height: 84%;
+    animation: hiddenShow 2s linear;
+    -webkit-animation: hiddenShow 2s linear;
+    /* Safari 与 Chrome */
+  }
+}
+
+// 中间
+.content-center {
+  width: px2rem(400);
+  height: 84%;
+  position: fixed;
+  left: 40%;
+  top: 10%;
+  z-index: 2;
+  overflow: hidden;
+}
+
+// 右侧
+.content-right {
+  width: px2rem(400);
+  height: 84%;
+  position: fixed;
+  right: px2rem(20);
+  top: 7%;
+  z-index: 2;
+  overflow: hidden;
+}
+
+// 底部
+.nav-bottom {
+  height: px2rem(144);
+  width: px2rem(1431);
+  position: fixed;
+  right: px2rem(245);
+  left: px2rem(245);
+  bottom: 0;
+  @include background('navTop/bottom-bg.png');
+  z-index: 3;
+}
+
+// 顶部
+.nav-top {
+  height: px2rem(90);
+  position: fixed;
+  right: px2rem(5);
+  left: px2rem(5);
+  top: 0.1%;
+  @include background('navTop/top-bg.png');
+  z-index: 3;
+}
+
+.cardBottomNormal {
+  @include background('laCard/bottom_normal.png');
+  position: fixed;
+  width: px2rem(400);
+  height: px2rem(43);
+  z-index: 4;
+  top: auto;
+
+  &.cardBottomShow {
+    animation: cardBottomShow 1.5s linear;
+    -webkit-animation: cardBottomShow 1.5s linear;
+    /* Safari 与 Chrome */
+  }
+}
+
+.cardBottomActive {
+  @include background('laCard/bottom_active.png');
+  position: fixed;
+  width: px2rem(400);
+  height: px2rem(43);
+  z-index: 4;
+  top: 12.5%;
+
+  &.cardBottomHidden {
+    animation: cardBottomHidden 2.1s linear;
+    -webkit-animation: cardBottomHidden 2.1s linear;
+    /* Safari 与 Chrome */
+  }
+}
+
+//左右面板收起动画
+@keyframes showHidden {
+  0% {
+    height: 84%;
+  }
+
+  10% {
+    height: 70%;
+  }
+
+  100% {
+    height: 6.1%;
+  }
+}
+
+@-webkit-keyframes showHidden
+
+/* Safari 与 Chrome */ {
+  0% {
+    height: 84%;
+  }
+
+  10% {
+    height: 70%;
+  }
+
+  100% {
+    height: 6.1%;
+  }
+}
+
+//左右面板收起动画
+@keyframes hiddenShow {
+  from {
+    height: 6.1%;
+  }
+
+  to {
+    height: 84%;
+  }
+}
+
+@-webkit-keyframes hiddenShow {
+  from {
+    height: 6.1%;
+  }
+
+  to {
+    height: 84%;
+  }
+}
+
+@keyframes cardBottomHidden {
+  0% {
+    top: auto;
+  }
+
+  10% {
+    top: 73%;
+  }
+
+  20% {
+    top: 66%;
+  }
+
+  40% {
+    top: 52%;
+  }
+
+  60% {
+    top: 38%;
+  }
+
+  80% {
+    top: 24%;
+  }
+
+  100% {
+    top: 12.5%;
+  }
+}
+
+@-webkit-keyframes cardBottomHidden {
+  0% {
+    top: auto;
+  }
+
+  10% {
+    top: 73%;
+  }
+
+  20% {
+    top: 66%;
+  }
+
+  40% {
+    top: 52%;
+  }
+
+  60% {
+    top: 38%;
+  }
+
+  80% {
+    top: 24%;
+  }
+
+  100% {
+    top: 12.5%;
+  }
+}
+
+//左右面板显示动画
+@keyframes cardBottomShow {
+  0% {
+    top: 12.5%;
+  }
+
+  90% {
+    top: 80%;
+  }
+
+  100% {
+    top: auto;
+  }
+}
+
+@-webkit-keyframes cardBottomShow {
+  0% {
+    top: 12.5%;
+  }
+
+  90% {
+    top: 75%;
+  }
+
+  100% {
+    top: auto;
+  }
+}

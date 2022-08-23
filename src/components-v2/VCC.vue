@@ -201,6 +201,7 @@ export default {
       }).onMerged(() => {
         this.currentPointer(null);
       }).onCodeCreated(code => {
+        
         this.code = code;
       }).onCodeStructureUpdated(codeRawVueInfo => {
         if (this.$refs.codeStructure) {
@@ -243,7 +244,7 @@ export default {
               class: "container",
               "lc_id": "container",
               "style": "min-height: 100%; padding-bottom: 100px;",
-              __text__: "Hello，欢迎使用VCC编辑器，请往此区域拖拽组件",
+              __text__: "Hello件",
             }
           }]
         },

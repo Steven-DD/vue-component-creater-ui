@@ -25,7 +25,7 @@ export default {
   destroyed() { },
   methods: {
     // 在此自动生成
-    request() {
+    request3() {
       // 网络请求，可选
     },
 

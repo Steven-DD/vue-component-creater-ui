@@ -62,6 +62,7 @@
 // import iview from "../rawComponents/iview";
 // import quasar from "../rawComponents/quasar";
 import raw from "../rawComponents/raw/index.vue";
+import diy_moulds from "../rawComponents/diy_moulds/index.vue"
 import { defineAsyncComponent } from "vue";
 
 export default {
@@ -72,9 +73,9 @@ export default {
       iconArray: [{
         icon: ('https://static.imonkey.xueersi.com/download/vcc-resource/logo/html-n.png'),
         clickCallback: this.onSelectElement,
-        className: "demonstration-raw",
+        className: "demonstration-diy_moulds",
         enable: true,
-        componentName: 'raw',
+        componentName: 'diy_moulds',
         titleArray: [],
       }, {
         icon: ('https://static.imonkey.xueersi.com/download/vcc-resource/logo/element-n.png'),
@@ -215,6 +216,7 @@ export default {
   },
 
   components: {
+    diy_moulds,
     raw,
     vant: defineAsyncComponent(() => import("../rawComponents/vant")),
     // iview,

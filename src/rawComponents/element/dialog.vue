@@ -19,17 +19,17 @@
 export default {
   data() {
     return {
-      dialogVisible: false,
-    };
+      dialogVisible: false
+    }
   },
   methods: {
     handleClose(done) {
-      this.$confirm("确认关闭？")
-        .then((_) => {
-          done();
+      this.$confirm('确认关闭？')
+        .then(_ => {
+          done()
         })
-        .catch((_) => { });
-    },
-  },
-};  </script>
+        .catch(_ => {})
+    }
+  }
+}  </script>
   <style scoped></style>

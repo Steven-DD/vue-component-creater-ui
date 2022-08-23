@@ -1,0 +1,28 @@
+@function px2rem($px) {
+  @return calc($px / 160) + rem;
+}
+
+//背景图片  url,百分比
+@mixin background($bgUrl: '', $bgSize: 100% 100%) {
+  background: url('@/assets/img/' + $bgUrl) no-repeat;
+  background-size: $bgSize;
+}
+
+//页面icon图标  url,宽，高
+@mixin icon($iconUrl: '', $iconWidth: px2rem(10), $iconHeight: px2rem(10)) {
+  display: inline-block;
+  width: $iconWidth;
+  height: $iconHeight;
+  background: url('@/assets/img/' + $iconUrl) no-repeat;
+  background-size: 100% 100%;
+}
+
+//多行文本溢出...  line表示显示多少行
+@mixin multiEllipsis($line: 2) {
+  overflow: hidden;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: $line;
+  -webkit-box-orient: vertical;
+}

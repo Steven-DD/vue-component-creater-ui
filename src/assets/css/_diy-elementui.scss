@@ -1,0 +1,99 @@
+//针对elment-ui的一些样式，在这里可以进行复写，注意用外层CSS进行页面限定！！
+
+.el-input--prefix {
+  .el-input__inner {
+    padding-left: px2rem(30) !important; //这里有点问题 先用important提升一下
+    padding-right: px2rem(30) !important;
+  }
+}
+
+.el-input {
+  .el-input__inner {
+    height: px2rem(40);
+    line-height: px2rem(35);
+    font-size: px2rem(16);
+    color: $whiteC;
+  }
+}
+
+.el-date-editor {
+  .el-input__inner {
+    height: px2rem(40);
+    line-height: px2rem(40);
+    font-size: px2rem(16);
+    color: $whiteC;
+  }
+  .el-input__icon {
+    width: px2rem(30);
+    line-height: px2rem(40);
+    font-size: px2rem(16);
+  }
+}
+
+.el-picker-panel {
+  line-height: px2rem(30) !important;
+}
+
+.el-date-picker {
+  width: px2rem(322) !important;
+  font-size: px2rem(16);
+  .el-date-picker__header {
+    margin: px2rem(12);
+    .el-picker-panel__icon-btn {
+      font-size: px2rem(14);
+    }
+    .el-date-picker__header-label {
+      font-size: px2rem(18);
+    }
+  }
+  .el-picker-panel__content {
+    margin: px2rem(15);
+  }
+  .el-picker-panel__content {
+    width: px2rem(292) !important;
+  }
+  .el-date-table {
+    font-size: px2rem(16);
+    th {
+      padding: px2rem(5);
+      text-align: center;
+    }
+    td {
+      div {
+        height: px2rem(30);
+        padding: px2rem(3) 0;
+      }
+      span {
+        width: px2rem(24);
+        height: px2rem(24);
+        line-height: px2rem(24);
+      }
+    }
+  }
+  .el-year-table {
+    font-size: px2rem(16);
+    td {
+      padding: px2rem(20) px2rem(3);
+      .cell {
+        width: px2rem(48);
+        height: px2rem(32);
+        line-height: px2rem(32);
+      }
+    }
+  }
+  .el-month-table {
+    font-size: px2rem(16);
+    td {
+      padding: px2rem(8) 0;
+      div {
+        height: px2rem(48);
+        padding: px2rem(6) 0;
+      }
+      .cell {
+        width: px2rem(60);
+        height: px2rem(36);
+        line-height: px2rem(36);
+      }
+    }
+  }
+}
